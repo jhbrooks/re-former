@@ -7,9 +7,19 @@
          value="<%= form_authenticity_token %>">
 </form> -->
 
-<%= form_tag '/users' do %>
+<!-- <%= form_tag '/users' do %>
   Username: <%= text_field_tag "username" %>
   Email: <%= text_field_tag "email" %>
   Password: <%= password_field_tag "password" %>
   <%= submit_tag "Submit" %>
+<% end %> -->
+
+<%= form_for @user do |f| %>
+  <%= f.label :username, "Username:" %>
+  <%= f.text_field :username %>
+  <%= f.label :email, "Email:" %>
+  <%= f.text_field :email, value: "ex@example.com" %>
+  <%= f.label :password, "Password:" %>
+  <%= f.password_field :password %>
+  <%= f.submit %>
 <% end %>

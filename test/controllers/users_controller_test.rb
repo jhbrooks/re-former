@@ -7,10 +7,10 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should post create" do
-    # post :create, user: { username: "Example", email: "ex@example.com",
-    #                      password: "3x4mp13" }
-    # assert_response :redirect
-    post :create
-    assert_response :success
+    # post :create
+    # assert_response :success
+    post :create, user: { username: "Example", email: "ex@example.com",
+                          password: "3x4mp13" }
+    assert_response :redirect
   end
 end
